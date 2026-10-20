@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3c4d2">
+<meta name="description" content="로즈쿼츠와 세레니티로 꾸민 CARAT 전용 버킷리스트">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="icon" href="./bongbongee.jpg">
+<title>BUCKETLIST for CARAT</title>
+<style>
+:root{--pink:#f7c9d6;--pink2:#fbe8ee;--blue:#a8bee7;--blue2:#edf2fc;--ink:#333342;--muted:#7d7c8d;--paper:#fffdfd;--line:#eadfe7}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(135deg,#fff8fa,#f4f7ff);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;min-height:100vh}
+header{padding:28px 18px 22px;text-align:center;background:linear-gradient(115deg,#f6c7d5,#dce7fb);border-radius:0 0 28px 28px}
+.kicker{font-size:11px;letter-spacing:.16em;color:#735c6b;font-weight:750}.brand{font-size:clamp(25px,7vw,38px);letter-spacing:-.06em;margin:8px 0 3px}.sub{font-size:12px;color:#665f76}
+.wrap{max-width:780px;margin:0 auto;padding:18px 14px 125px}.tabs{display:flex;gap:8px;margin:4px 0 16px}.tab{flex:1;border:1px solid var(--line);background:#fff9;border-radius:13px;padding:12px 6px;font-weight:700;color:var(--muted)}.tab.active{background:var(--ink);color:white;border-color:var(--ink)}
+.panel{background:#ffffffd9;border:1px solid #eee5ed;border-radius:20px;padding:16px;margin:12px 0;box-shadow:0 7px 25px #8996b411}.row{display:flex;align-items:center;gap:8px}.between{justify-content:space-between}.muted{color:var(--muted);font-size:12px}.progress{height:7px;border-radius:9px;background:#edf0f8;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--pink),var(--blue));transition:width .25s}
+button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:10px 13px;background:var(--blue2);color:var(--ink);font-weight:650}button.primary{background:var(--pink);border:1px solid #edb8ca}button.dark{background:var(--ink);color:#fff}button.small{font-size:12px;padding:7px 9px}button:focus-visible,input:focus-visible{outline:3px solid #8ca9df;outline-offset:2px}
+input[type=text]{min-width:0;width:100%;border:1px solid var(--line);border-radius:12px;background:#fff;padding:11px 12px;color:var(--ink)}.addrow{display:flex;gap:8px;margin-top:12px}.addrow input{flex:1}
+.chapter{border:1px solid #e8e2ee;border-radius:17px;padding:14px;margin:12px 0;background:linear-gradient(120deg,#fff9fb,#f9fbff)}.chapter h3{margin:0;font-size:16px}.chapter-head{display:flex;align-items:center;gap:8px}.chapter-head input{font-weight:750;background:transparent}.chapter-actions{display:flex;gap:5px}.items{list-style:none;padding:0;margin:12px 0 0}.item{display:flex;gap:9px;align-items:center;padding:9px 2px;border-top:1px solid #f0eaf0}.item input[type=checkbox]{accent-color:#91a9d7;width:18px;height:18px;flex:none}.item span{flex:1;overflow-wrap:anywhere}.item.done span{text-decoration:line-through;color:#aaa}.item button{background:transparent;padding:5px;color:#8d8190}.empty{padding:24px 12px;text-align:center;color:var(--muted);font-size:13px;line-height:1.7}
+.song{padding:13px;border-radius:15px;background:linear-gradient(120deg,#fff3f6,#f0f5ff);margin:10px 0}.song-title{font-weight:800}.tag{font-size:10px;padding:4px 7px;border-radius:8px;background:#fff;color:#726d82}.song-links{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.notice{background:#f5f6fb;border-radius:12px;padding:12px;font-size:12px;line-height:1.6;color:#65677a}
+.hidden{display:none!important}.footer{text-align:center;font-size:11px;color:#9b95a5;padding:22px 0}
+.walker{position:fixed;bottom:8px;left:-95px;width:76px;height:76px;object-fit:contain;border-radius:50%;background:#fff;box-shadow:0 4px 16px #7d8ab522;z-index:10;animation:walk 24s linear infinite;cursor:pointer;border:2px solid #fff}
+@keyframes walk{0%{transform:translateX(0) scaleX(1)}48%{transform:translateX(calc(100vw + 105px)) scaleX(1)}50%{transform:translateX(calc(100vw + 105px)) scaleX(-1)}98%{transform:translateX(0) scaleX(-1)}100%{transform:translateX(0) scaleX(1)}}
+.walker.paused{animation-play-state:paused}.spark{position:fixed;pointer-events:none;font-size:18px;z-index:20;animation:pop .9s ease-out forwards}@keyframes pop{from{opacity:1;transform:translateY(0) scale(.6)}to{opacity:0;transform:translateY(-65px) scale(1.5)}}
+@media(prefers-reduced-motion:reduce){.walker{animation:none;left:8px}.progress{transition:none}}
+</style>
+</head>
+<body>
+<header><div class="kicker">SEVENTEEN · CARAT</div><h1 class="brand">BUCKETLIST <span style="font-weight:400">for CARAT</span></h1><div class="sub">Rose Quartz × Serenity <span aria-hidden="true">🩷 🩵 💎</span></div></header>
+<main class="wrap">
+<div class="tabs"><button class="tab active" data-tab="list">BUCKET LIST</button><button class="tab" data-tab="music">오늘의 노래 추천</button><button class="tab" data-tab="settings">설정</button></div>
+<section id="listView">
+<div class="panel"><div class="row between"><div><div class="muted">MY PROGRESS</div><strong id="progressText">0 / 0 완료</strong></div><button class="small" id="addChapter">＋ 챕터 추가</button></div><div class="progress"><span id="progressBar"></span></div></div>
+<div id="chapters"></div><div class="empty" id="emptyState">아직 챕터가 없어.<br>원하는 주제로 첫 챕터를 추가해 봐.</div>
+<div class="row" style="gap:8px"><button id="exportBtn" class="small">백업 내보내기</button><button id="importBtn" class="small">백업 불러오기</button><input id="importFile" type="file" accept="application/json" class="hidden"></div>
+</section>
+<section id="musicView" class="hidden">
+<div class="panel"><div class="row between"><div><div class="muted">SEVENTEEN · RANDOM PICK</div><h2 style="margin:5px 0">오늘의 오노추</h2></div><span style="font-size:26px">💎</span></div><p class="muted">그룹곡·유닛곡·솔로곡을 섞어 추천해.</p><button class="primary" id="recommend">다른 노래 추천</button><div id="recommendation"></div></div>
+<div class="panel"><div class="row between"><strong>발매 정보 확인</strong><button class="small" id="officialLink">공식 디스코그래피 ↗</button></div><p class="muted">새 발매곡은 공식 사이트에서 확인할 수 있어.</p><div class="notice">자동 갱신 안내: 현재 공식 사이트가 공개 API/RSS를 제공하는지 확인되지 않았고, 브라우저에서 공식 페이지의 곡 목록을 직접 읽는 것도 차단될 수 있어. 그래서 이 버전은 새 발매곡을 몰래 자동 추가한다고 보장하지 않아. 아래 공식 링크에서 최신 정보를 확인하고, 추천 목록은 앱 업데이트로 보완해야 해.</div></div>
+<div id="songList"></div>
+</section>
+<section id="settingsView" class="hidden">
+<div class="panel"><h2 style="margin-top:0">화면 설정</h2><label class="row between" style="padding:12px 0"><span>봉봉이 걷기 애니메이션</span><input type="checkbox" id="walkToggle" checked></label><label class="row between" style="padding:12px 0"><span>완료 반짝임 효과</span><input type="checkbox" id="sparkToggle" checked></label><button id="saveSettings" class="primary">설정 저장</button></div>
+<div class="panel"><h3>앱 설치</h3><p class="muted">웹에 HTTPS로 게시한 뒤 브라우저 메뉴의 ‘앱 설치’ 또는 ‘홈 화면에 추가’를 선택해.</p><button id="installBtn" class="hidden">앱 설치</button><div id="installHelp" class="notice">설치 기능은 지원되는 브라우저에서 게시된 웹 주소로 접속해야 나타나.</div></div>
+<div class="panel"><h3>데이터</h3><p class="muted">버킷리스트는 이 기기의 브라우저에 저장돼. 다른 기기와 자동 동기화되지는 않아. 기기를 바꾸기 전 백업을 내보내 줘.</p><button id="clearData" class="small">모든 버킷리스트 삭제</button></div>
+</section>
+<div class="footer">BUCKETLIST for CARAT · 개인용 팬 프로젝트</div>
+</main>
+<img class="walker" id="walker" src="./bongbongee.jpg" alt="봉봉이 캐릭터. 누르면 걷기를 멈춰." title="봉봉이 걷기 멈춤/재개">
+<script>
+const STORE='caratBucketlist_v1', SET='caratSettings_v1';
+const songs=[
+['Super','SEVENTEEN','그룹곡'],['HOT','SEVENTEEN','그룹곡'],['Rock with you','SEVENTEEN','그룹곡'],['Very Nice','SEVENTEEN','그룹곡'],['Don’t Wanna Cry','SEVENTEEN','그룹곡'],['_WORLD','SEVENTEEN','그룹곡'],['HOME;RUN','SEVENTEEN','그룹곡'],['To you','SEVENTEEN','그룹곡'],['Pretty U','SEVENTEEN','그룹곡'],['음악의 신','SEVENTEEN','그룹곡'],['손오공','SEVENTEEN','그룹곡'],['LOVE, MONEY, FAME','SEVENTEEN','그룹곡'],['Eyes on you','SEVENTEEN','그룹곡'],['HAPPY BURSTDAY','SEVENTEEN','앨범'],['Tiny Light','SEVENTEEN','OST/싱글'],['Fighting','BSS','유닛곡'],['Just do it','BSS','유닛곡'],['Cheers','SVT LEADERS','유닛곡'],['Change Up','SVT LEADERS','유닛곡'],['Bittersweet','MINGYU, WONWOO feat. LEE HI','유닛곡'],['Spider','HOSHI','솔로곡'],['Ruby','WOOZI','솔로곡'],['Limbo','JUN','솔로곡'],['Hai Cheng','THE 8','솔로곡'],['Side By Side','THE 8','솔로곡'],['Wait','DINO','솔로곡'],['Psycho','JUN','솔로곡'],['Dream','JEONGHAN X WONWOO','유닛곡'],['BEAM','HOSHI X WOOZI','유닛곡'],['Serenade','DxS (DK X SEUNGKWAN)','유닛곡'],['Rockstar','DxS (DK X SEUNGKWAN)','유닛곡'],['Blue','DxS (DK X SEUNGKWAN)','유닛곡'],['HYPE VIBES','CxM (S.COUPS X MINGYU)','유닛곡'],['V8','THE 8 X VERNON','유닛곡'],['吉BOARD (Gilboard)','Picheolin','유닛/프로젝트']
+];
+let data=loadData(); let settings=Object.assign({walk:true,spark:true},JSON.parse(localStorage.getItem(SET)||'{}')); let lastSong=-1; let deferredPrompt=null;
+function loadData(){try{return JSON.parse(localStorage.getItem(STORE))||[]}catch{return []}}
+function save(){localStorage.setItem(STORE,JSON.stringify(data));render()}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){const root=document.getElementById('chapters');root.innerHTML='';let total=0,done=0;data.forEach((ch,ci)=>{const box=document.createElement('article');box.className='chapter';box.innerHTML=`<div class="chapter-head"><span>${ci%2?'🩵':'🩷'}</span><input aria-label="챕터 이름" type="text" value="${esc(ch.name)}" data-rename="${ci}"><div class="chapter-actions"><button class="small" data-up="${ci}" aria-label="위로">↑</button><button class="small" data-down="${ci}" aria-label="아래로">↓</button><button class="small" data-delete-ch="${ci}" aria-label="챕터 삭제">×</button></div></div><ul class="items">${ch.items.map((it,ii)=>{total++;if(it.done)done++;return `<li class="item ${it.done?'done':''}"><input type="checkbox" ${it.done?'checked':''} data-check="${ci},${ii}" aria-label="완료"><span>${esc(it.text)}</span><button data-edit="${ci},${ii}">수정</button><button data-delete="${ci},${ii}" aria-label="항목 삭제">×</button></li>`}).join('')}</ul><div class="addrow"><input type="text" placeholder="버킷리스트 항목 추가" data-new="${ci}" aria-label="새 항목"><button class="primary" data-add="${ci}">추가</button></div>`;root.appendChild(box)});document.getElementById('emptyState').classList.toggle('hidden',data.length>0);document.getElementById('progressText').textContent=`${done} / ${total} 완료`;document.getElementById('progressBar').style.width=(total?done/total*100:0)+'%'}
+document.getElementById('chapters').addEventListener('click',e=>{let b=e.target.closest('button');if(!b)return;const ci=+(b.dataset.add??b.dataset['delete-ch']??b.dataset.up??b.dataset.down??-1);if(b.dataset.add!==undefined){const input=document.querySelector(`[data-new="${ci}"]`),text=input.value.trim();if(text){data[ci].items.push({text,done:false});save()}return}if(b.dataset['delete-ch']!==undefined){if(confirm('이 챕터와 안의 항목을 삭제할까?')){data.splice(ci,1);save()}return}if(b.dataset.up!==undefined&&ci>0){[data[ci-1],data[ci]]=[data[ci],data[ci-1]];save();return}if(b.dataset.down!==undefined&&ci<data.length-1){[data[ci+1],data[ci]]=[data[ci],data[ci+1]];save();return}if(b.dataset.delete!==undefined){const [c,i]=b.dataset.delete.split(',').map(Number);data[c].items.splice(i,1);save();return}if(b.dataset.edit!==undefined){const [c,i]=b.dataset.edit.split(',').map(Number),v=prompt('항목 수정',data[c].items[i].text);if(v!==null&&v.trim()){data[c].items[i].text=v.trim();save()}}});
+document.getElementById('chapters').addEventListener('change',e=>{if(e.target.dataset.rename!==undefined){data[+e.target.dataset.rename].name=e.target.value.trim()||'새 챕터';save()}if(e.target.dataset.check){const [c,i]=e.target.dataset.check.split(',').map(Number);data[c].items[i].done=e.target.checked;save();if(e.target.checked&&settings.spark)spark(e.target)}});
+document.getElementById('chapters').addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.dataset.new!==undefined){document.querySelector(`[data-add="${e.target.dataset.new}"]`).click()}});
+document.getElementById('addChapter').onclick=()=>{const name=prompt('챕터 이름을 입력해 줘');if(name&&name.trim()){data.push({name:name.trim(),items:[]});save()}};
+function spark(el){const r=el.getBoundingClientRect();['✦','♡','✧'].forEach((t,i)=>{const s=document.createElement('span');s.className='spark';s.textContent=t;s.style.left=(r.left+10+i*15)+'px';s.style.top=(r.top-3)+'px';s.style.color=i%2?'#91aee4':'#e7a3bc';document.body.append(s);setTimeout(()=>s.remove(),950)})}
+function showTab(tab){document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));['list','music','settings'].forEach(k=>document.getElementById(k+'View').classList.toggle('hidden',k!==tab))}
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>showTab(b.dataset.tab));
+function pick(){let i=Math.floor(Math.random()*songs.length);if(songs.length>1&&i===lastSong)i=(i+1)%songs.length;lastSong=i;const [title,artist,type]=songs[i];document.getElementById('recommendation').innerHTML=`<div class="song"><div class="row between"><div class="song-title">${esc(title)}</div><span class="tag">${esc(type)}</span></div><div class="muted" style="margin-top:5px">${esc(artist)}</div><div class="song-links"><button class="small" onclick="searchSong('${encodeURIComponent(title+' '+artist+' official')}','youtube')">YouTube에서 찾기 ↗</button><button class="small" onclick="searchSong('${encodeURIComponent(title+' '+artist)}','spotify')">Spotify에서 찾기 ↗</button></div></div>`}
+window.searchSong=(q,service)=>window.open(service==='youtube'?'https://www.youtube.com/results?search_query='+q:'https://open.spotify.com/search/'+q,'_blank','noopener');
+document.getElementById('recommend').onclick=pick;
+document.getElementById('songList').innerHTML='<div class="panel"><strong>추천 후보에 포함된 곡</strong><p class="muted">완전한 전곡 목록이 아니라 추천용 샘플 목록이야.</p>'+songs.map(s=>`<div class="row between" style="padding:8px 0;border-top:1px solid #f0eaf0"><div><strong style="font-size:13px">${esc(s[0])}</strong><div class="muted">${esc(s[1])}</div></div><span class="tag">${esc(s[2])}</span></div>`).join('')+'</div>';
+document.getElementById('officialLink').onclick=()=>window.open('https://www.seventeen-17.jp/posts/discography','_blank','noopener');
+document.getElementById('walker').onclick=()=>{document.getElementById('walker').classList.toggle('paused');document.getElementById('walker').title=document.getElementById('walker').classList.contains('paused')?'봉봉이 걷기 재개':'봉봉이 걷기 멈춤'};
+function applySettings(){document.getElementById('walker').style.display=settings.walk?'block':'none';document.getElementById('walkToggle').checked=settings.walk;document.getElementById('sparkToggle').checked=settings.spark}
+document.getElementById('saveSettings').onclick=()=>{settings.walk=document.getElementById('walkToggle').checked;settings.spark=document.getElementById('sparkToggle').checked;localStorage.setItem(SET,JSON.stringify(settings));applySettings()};
+document.getElementById('exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({data,settings},null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='carat-bucketlist-backup.json';a.click();URL.revokeObjectURL(url)};
+document.getElementById('importBtn').onclick=()=>document.getElementById('importFile').click();
+document.getElementById('importFile').onchange=async e=>{try{const obj=JSON.parse(await e.target.files[0].text());if(Array.isArray(obj)){data=obj}else{data=obj.data||[];settings=Object.assign(settings,obj.settings||{})}save();localStorage.setItem(SET,JSON.stringify(settings));applySettings();alert('백업을 불러왔어.')}catch{alert('백업 파일을 읽을 수 없어.')}e.target.value=''};
+document.getElementById('clearData').onclick=()=>{if(confirm('모든 챕터와 항목을 삭제할까? 이 작업은 되돌릴 수 없어.')){data=[];save()}};
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const b=document.getElementById('installBtn');b.classList.remove('hidden');b.onclick=async()=>{deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;b.classList.add('hidden')}});
+if('serviceWorker'in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+render();applySettings();
+</script>
+</body></html>

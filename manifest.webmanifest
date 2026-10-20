@@ -1,0 +1,18 @@
+{
+  "name": "BUCKETLIST for CARAT",
+  "short_name": "CARAT LIST",
+  "description": "로즈쿼츠와 세레니티로 꾸민 캐럿 버킷리스트",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff8fa",
+  "theme_color": "#f3c4d2",
+  "icons": [
+    {
+      "src": "./bongbongee.jpg",
+      "sizes": "any",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
